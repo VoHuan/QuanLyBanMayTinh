@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/MyCustom/XuLyFileExcel.java=UTF-8
+encoding//src/QuanLyMayTinh/BUS/CTKhuyenMaiBUS.java=UTF-8
+encoding//src/QuanLyMayTinh/BUS/KhuyenMaiBUS.java=UTF-8
+encoding//src/QuanLyMayTinh/BUS/LoaiSanPhamBUS.java=UTF-8
+encoding//src/QuanLyMayTinh/BUS/NhanVienBUS.java=UTF-8
+encoding//src/QuanLyMayTinh/BUS/SanPhamBUS.java=UTF-8
+encoding//src/QuanLyMayTinh/GUI/DLG_ChonKhachHang.java=UTF-8
+encoding//src/QuanLyMayTinh/GUI/QL_CTHoaDonGUI.java=UTF-8
+encoding//src/QuanLyMayTinh/GUI/QL_KhuyenMaiGUI.java=UTF-8
+encoding//src/QuanLyMayTinh/GUI/QL_SanPhamGUI.java=UTF-8
+encoding/<project>=UTF-8
