@@ -15,6 +15,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import QuanLyMayTinh.BUS.ThongKeBUS;
 import QuanLyMayTinh.DAO.MyConnect;
+import MyCustom.MoneyFormatter;
 
 public class ThongKeBieuDo extends JFrame {
 
@@ -89,7 +90,7 @@ public class ThongKeBieuDo extends JFrame {
         	}
         }
         for(int i = 0;i<12;i++) {
-        	dataset.addValue(Integer.parseInt(thang_Thu[i]), "VNĐ",  i+1+"");
+        	dataset.addValue((MoneyFormatter.parseMoney(thang_Thu[i])), "VNĐ",  i+1+"");
         }
 
         return dataset;
@@ -112,7 +113,7 @@ public class ThongKeBieuDo extends JFrame {
         	}
         }
         for(int i = 0;i<12;i++) {
-        	dataset.addValue(Integer.parseInt(thang_Chi[i]), "VNĐ", i+1+"");
+        	dataset.addValue((MoneyFormatter.parseMoney( thang_Chi[i])), "VNĐ", i+1+"");
         }
 
         return dataset;

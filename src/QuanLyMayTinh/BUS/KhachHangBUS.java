@@ -16,6 +16,10 @@ public class KhachHangBUS {
     public void docDanhSach() {
         this.listKhachHang = khachHangDAO.getListKhachHang();
     }
+    
+    public int getLastCustomerID() {
+    	return khachHangDAO.getLastCustomerID();
+    }
 
     public ArrayList<KhachHang> getListKhachHang() {
         if (listKhachHang == null)

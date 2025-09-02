@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import QuanLyMayTinh.DAO.MyConnect;
+
 import javax.swing.ScrollPaneConstants;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -53,6 +56,7 @@ public class QL_CTHoaDonGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public QL_CTHoaDonGUI() {
+		new MyConnect();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 556, 539);
 		contentPane = new JPanel();

@@ -4,6 +4,7 @@ import QuanLyMayTinh.DTO.HoaDon;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HoaDonDAO {
     public ArrayList<HoaDon> getListHoaDon() {
@@ -28,6 +29,22 @@ public class HoaDonDAO {
         return dshd;
     }
 
+    public List<Integer> getDanhSachNamCoHoaDon() {
+        List<Integer> dsNam = new ArrayList<>();
+
+        try {
+            String sql = "SELECT DISTINCT YEAR(NgayLap) AS Nam FROM HoaDon ORDER BY Nam ASC";
+            PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
+            ResultSet rs = prep.executeQuery();
+            while (rs.next()) {
+                dsNam.add(rs.getInt("Nam"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return dsNam;
+    }
     public boolean addHoaDon(HoaDon hd) {
         boolean result = false;
         try {

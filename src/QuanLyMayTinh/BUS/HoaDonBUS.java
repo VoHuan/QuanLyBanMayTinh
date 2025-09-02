@@ -7,6 +7,7 @@ import MyCustom.MyDialog;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class HoaDonBUS {
 
@@ -16,6 +17,10 @@ public class HoaDonBUS {
     public ArrayList<HoaDon> getListHoaDon() {
         listHoaDon = hoaDonDAO.getListHoaDon();
         return listHoaDon;
+    }
+    
+    public List<Integer> getDanhSachNamCoHoaDon() {
+    	return hoaDonDAO.getDanhSachNamCoHoaDon();
     }
 
     public void luuHoaDon(String maKH, String maNV, String tongTien, String ghiChu) {

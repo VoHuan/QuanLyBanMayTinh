@@ -21,6 +21,7 @@ public class CTHoaDonBUS {
     }
 
     public ArrayList<CTHoaDon> getListCTHoaDon() {
+    	listCTHoaDon = ctHDDAO.getListCTHoaDon();
         return listCTHoaDon;
     }
 

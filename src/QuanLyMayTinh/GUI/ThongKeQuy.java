@@ -5,6 +5,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import QuanLyMayTinh.BUS.ThongKeBUS;
+import MyCustom.MoneyFormatter;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -234,7 +235,7 @@ public class ThongKeQuy extends JPanel {
 	private String[] getTongThuQuy(String nam) {
 		quy_Thu = new String[4];
 		for(int i =1;i<5;i++) {
-			quy_Thu[i-1] = TKBUS.getTongDoanhThuQuy(nam,i+"")+"";
+			quy_Thu[i-1] = MoneyFormatter.formatMoney(TKBUS.getTongDoanhThuQuy(nam,i+""));
 		}
 		return quy_Thu;
 	}
@@ -251,7 +252,7 @@ public class ThongKeQuy extends JPanel {
 	private String[] getTongChiQuy(String nam) {
 		quy_Chi = new String[4];
 		for(int i =1;i<5;i++) {
-			quy_Chi[i-1] = TKBUS.getTongDoanhChiQuy(nam,i+"")+"";
+			quy_Chi[i-1] = MoneyFormatter.formatMoney(TKBUS.getTongDoanhChiQuy(nam,i+""));
 		}
 		return quy_Chi;
 	}

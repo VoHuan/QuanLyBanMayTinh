@@ -19,6 +19,21 @@ import java.util.ArrayList;
  */
 public class KhachHangDAO {
 
+	public int getLastCustomerID() {
+		int latestId = 1; // mặc định nếu không có KH nào
+	    try {
+	        String sql = "SELECT MaKH FROM khachhang ORDER BY MaKH DESC LIMIT 1";
+	        PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
+	        ResultSet rs = prep.executeQuery();
+	        if (rs.next()) {
+	            latestId = rs.getInt("MaKH");
+	        }
+	    } catch (SQLException ex) {
+	        ex.printStackTrace();
+	        return -1;
+	    }
+	    return latestId;
+	}
     public ArrayList<KhachHang> getListKhachHang() {
         try {
             String sql = "SELECT * FROM khachhang WHERE TinhTrang=1";

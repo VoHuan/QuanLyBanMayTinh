@@ -183,7 +183,7 @@ public class QL_BanHang extends JFrame {
 		
 		cbx_LoaiSP = new JComboBox();
 		cbx_LoaiSP.setModel(new DefaultComboBoxModel(new String[] {"All"}));
-		cbx_LoaiSP.setBounds(194, 56, 96, 21);
+		cbx_LoaiSP.setBounds(194, 56, 96, 30);
 		panel_BanHang.add(cbx_LoaiSP);
 		
 		JPanel panel = new JPanel();
@@ -230,29 +230,30 @@ public class QL_BanHang extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(SystemColor.control);
 		panel_2.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Th\u00F4ng Tin Kh\u00E1ch H\u00E0ng", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
-		panel_2.setBounds(10, 20, 624, 100);
+		panel_2.setBounds(10, 20, 624, 112);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
 		
 		JLabel lblNewLabel_4 = new JLabel("Họ");
 		lblNewLabel_4.setForeground(Color.BLACK);
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_4.setBounds(104, 20, 38, 13);
+		lblNewLabel_4.setBounds(125, 26, 38, 13);
 		panel_2.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Mã KH:");
 		lblNewLabel_5.setForeground(Color.BLACK);
 		lblNewLabel_5.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_5.setBounds(91, 43, 45, 13);
+		lblNewLabel_5.setBounds(120, 68, 45, 13);
 		panel_2.add(lblNewLabel_5);
 		
 		txt_HoKH = new JTextField();
-		txt_HoKH.setBounds(146, 17, 183, 19);
+		txt_HoKH.setBounds(173, 20, 150, 27);
 		panel_2.add(txt_HoKH);
 		txt_HoKH.setColumns(10);
 		
 		txt_maKH = new JTextField();
-		txt_maKH.setBounds(146, 40, 183, 19);
+		txt_maKH.setEnabled(false);
+		txt_maKH.setBounds(172, 61, 151, 27);
 		panel_2.add(txt_maKH);
 		txt_maKH.setColumns(10);
 		
@@ -265,22 +266,22 @@ public class QL_BanHang extends JFrame {
 		JLabel lblNewLabel_8 = new JLabel("Giới Tính");
 		lblNewLabel_8.setForeground(Color.BLACK);
 		lblNewLabel_8.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_8.setBounds(358, 43, 70, 13);
+		lblNewLabel_8.setBounds(351, 49, 70, 13);
 		panel_2.add(lblNewLabel_8);
 		
 		JLabel lblNewLabel_9 = new JLabel("Nh\u00E2n Vi\u00EAn L\u1EADp");
 		lblNewLabel_9.setForeground(Color.BLACK);
 		lblNewLabel_9.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_9.setBounds(339, 68, 82, 13);
+		lblNewLabel_9.setBounds(339, 86, 82, 13);
 		panel_2.add(lblNewLabel_9);
 		
 		txt_tenKH = new JTextField();
-		txt_tenKH.setBounds(431, 17, 183, 19);
+		txt_tenKH.setBounds(431, 10, 183, 27);
 		panel_2.add(txt_tenKH);
 		txt_tenKH.setColumns(10);
 		
 		txt_gioiTinh = new JTextField();
-		txt_gioiTinh.setBounds(431, 40, 183, 19);
+		txt_gioiTinh.setBounds(431, 43, 183, 27);
 		panel_2.add(txt_gioiTinh);
 		txt_gioiTinh.setColumns(10);
 		
@@ -290,7 +291,7 @@ public class QL_BanHang extends JFrame {
 		txt_tenNV.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txt_tenNV.setBackground(SystemColor.window);
 		txt_tenNV.setEnabled(false);
-		txt_tenNV.setBounds(431, 65, 183, 19);
+		txt_tenNV.setBounds(431, 79, 183, 27);
 		panel_2.add(txt_tenNV);
 		txt_tenNV.setColumns(10);
 		
@@ -301,54 +302,54 @@ public class QL_BanHang extends JFrame {
 				dlg.setVisible(true);
 			}
 		});
-		btn_TimKH.setBackground(new Color(255, 255, 0));
+		btn_TimKH.setBackground(Color.GREEN);
 		btn_TimKH.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btn_TimKH.setBounds(194, 69, 96, 21);
+		btn_TimKH.setBounds(10, 39, 96, 35);
 		panel_2.add(btn_TimKH);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(SystemColor.control);
 		panel_3.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Th\u00F4ng Tin S\u1EA3n Ph\u1EA9m", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
-		panel_3.setBounds(10, 132, 624, 139);
+		panel_3.setBounds(10, 136, 624, 172);
 		panel_1.add(panel_3);
 		panel_3.setLayout(null);
 		
 		JLabel lblNewLabel_10 = new JLabel("M\u00E3 S\u1EA3n Ph\u1EA9m:");
 		lblNewLabel_10.setForeground(Color.BLACK);
-		lblNewLabel_10.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_10.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblNewLabel_10.setBounds(267, 21, 81, 13);
 		panel_3.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("T\u00EAn S\u1EA3n Ph\u1EA9m:");
 		lblNewLabel_11.setForeground(Color.BLACK);
-		lblNewLabel_11.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_11.setBounds(263, 44, 85, 13);
+		lblNewLabel_11.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_11.setBounds(263, 55, 85, 13);
 		panel_3.add(lblNewLabel_11);
 		
 		JLabel lblNewLabel_12 = new JLabel("\u0110\u01A1n Gi\u00E1:");
 		lblNewLabel_12.setForeground(Color.BLACK);
-		lblNewLabel_12.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_12.setBounds(296, 67, 52, 13);
+		lblNewLabel_12.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_12.setBounds(296, 97, 52, 13);
 		panel_3.add(lblNewLabel_12);
 		
 		JLabel lblNewLabel_13 = new JLabel("S\u1ED1 L\u01B0\u1EE3ng:");
 		lblNewLabel_13.setForeground(Color.BLACK);
-		lblNewLabel_13.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_13.setBounds(287, 90, 61, 13);
+		lblNewLabel_13.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_13.setBounds(287, 145, 61, 13);
 		panel_3.add(lblNewLabel_13);
 		
 		txt_MaSP = new JTextField();
-		txt_MaSP.setBounds(358, 18, 168, 19);
+		txt_MaSP.setBounds(358, 12, 168, 30);
 		panel_3.add(txt_MaSP);
 		txt_MaSP.setColumns(10);
 		
 		txt_TenSP = new JTextField();
-		txt_TenSP.setBounds(358, 41, 227, 19);
+		txt_TenSP.setBounds(358, 50, 227, 30);
 		panel_3.add(txt_TenSP);
 		txt_TenSP.setColumns(10);
 		
 		txt_donGia = new JTextField();
-		txt_donGia.setBounds(358, 64, 256, 19);
+		txt_donGia.setBounds(358, 90, 256, 30);
 		panel_3.add(txt_donGia);
 		txt_donGia.setColumns(10);
 		
@@ -358,31 +359,31 @@ public class QL_BanHang extends JFrame {
 				themVaoGioHang();
 			}
 		});
-		btn_themGioHang.setBackground(new Color(255, 255, 0));
+		btn_themGioHang.setBackground(Color.GREEN);
 		btn_themGioHang.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btn_themGioHang.setBounds(434, 108, 124, 21);
+		btn_themGioHang.setBounds(472, 132, 124, 28);
 		panel_3.add(btn_themGioHang);
 		
 		spi_soLuong = new JSpinner();
 		spi_soLuong.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
-		spi_soLuong.setBounds(358, 87, 96, 20);
+		spi_soLuong.setBounds(366, 132, 96, 30);
 		panel_3.add(spi_soLuong);
 		
 		lbl_hinhAnh = new JLabel("");
 		lbl_hinhAnh.setBackground(Color.WHITE);
-		lbl_hinhAnh.setBounds(85, 19, 168, 108);
+		lbl_hinhAnh.setBounds(10, 19, 209, 139);
 		panel_3.add(lbl_hinhAnh);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setForeground(Color.BLACK);
 		panel_4.setBackground(SystemColor.control);
 		panel_4.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Gi\u1ECF H\u00E0ng", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
-		panel_4.setBounds(10, 281, 624, 213);
+		panel_4.setBounds(10, 310, 624, 184);
 		panel_1.add(panel_4);
 		panel_4.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 20, 604, 183);
+		scrollPane.setBounds(10, 20, 604, 155);
 		panel_4.add(scrollPane);
 		
 		tbl_gioHang = new JTable();
@@ -409,28 +410,27 @@ public class QL_BanHang extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Tổng tiền      :");
 		lblNewLabel_2.setForeground(Color.BLACK);
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_2.setBounds(310, 504, 97, 13);
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_2.setBounds(310, 514, 97, 13);
 		panel_1.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Mã giảm giá :");
 		lblNewLabel_3.setForeground(Color.BLACK);
-		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_3.setBounds(310, 572, 81, 13);
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_3.setBounds(310, 585, 81, 13);
 		panel_1.add(lblNewLabel_3);
 		
 		btn_ThanhToan = new JButton("Thanh to\u00E1n");
 		btn_ThanhToan.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				String customerID = txt_maKH.getText();
 				if (txt_maKH.getText().equals("")||txt_maKH.getText().equals("0")) {
-					new MyDialog("Vui lòng chọn khách hàng trước khi thanh toán !!!", MyDialog.ERROR_DIALOG);
-					return;
+					customerID = khBUS.getLastCustomerID()+"";		
 				}
 				// thêm hóa đơn vào csdl
 				String maNV[] = txt_tenNV.getText().split(" - ");
 				String tt[] = txt_TongTien.getText().split("  ");
-				hoaDonBUS.luuHoaDon(txt_maKH.getText(), maNV[0], tt[0], "Đã thanh toán");
+				hoaDonBUS.luuHoaDon(customerID, maNV[0], tt[0], "Đã thanh toán");
 				// thanh toán
 				thanhToan();
 				// thêm chi tiết hóa đơn vào cơ sở dữ liệu
@@ -444,6 +444,10 @@ public class QL_BanHang extends JFrame {
 				// update tổng chi tiêu khách hàng
 				//khBUS.updateTongChiTieu(txt_maKH.getText(), txt_TongTien.getText());
 
+				txt_maKH.setText("");
+				txt_HoKH.setText("");
+				txt_tenKH.setText("");
+				txt_gioiTinh.setText("");
 				txt_GiamGia.setText("");
 				txt_tongTien.setText("");
 				tongTien = 0;
@@ -452,18 +456,18 @@ public class QL_BanHang extends JFrame {
 				dsGioHang.clear();
 			}
 		});
-		btn_ThanhToan.setBackground(new Color(255, 255, 0));
-		btn_ThanhToan.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btn_ThanhToan.setBounds(146, 554, 97, 49);
+		btn_ThanhToan.setBackground(Color.GREEN);
+		btn_ThanhToan.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btn_ThanhToan.setBounds(131, 554, 112, 49);
 		panel_1.add(btn_ThanhToan);
 		
 		txt_TongTien = new JTextField();
-		txt_TongTien.setBounds(405, 501, 187, 19);
+		txt_TongTien.setBounds(405, 501, 187, 30);
 		panel_1.add(txt_TongTien);
 		txt_TongTien.setColumns(10);
 		
 		txt_GiamGia = new JTextField();			
-		txt_GiamGia.setBounds(405, 566, 153, 19);
+		txt_GiamGia.setBounds(405, 580, 153, 30);
 		panel_1.add(txt_GiamGia);
 		txt_GiamGia.setColumns(10);
 		txt_GiamGia.getDocument().addDocumentListener(new DocumentListener() {		
@@ -487,6 +491,7 @@ public class QL_BanHang extends JFrame {
 		});
 		
 		btn_TimMaGG = new JButton("T\u00ECm");
+		btn_TimMaGG.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_TimMaGG.addActionListener(new ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				if(txt_TongTien.getText().equals("")) {
@@ -497,38 +502,40 @@ public class QL_BanHang extends JFrame {
 				dlg.setVisible(true);		
 			}
 		});
-		btn_TimMaGG.setBounds(568, 568, 57, 21);
+		btn_TimMaGG.setBounds(568, 582, 57, 25);
 		panel_1.add(btn_TimMaGG);
 		
 		JButton btn_xoaGioHang = new JButton("Xóa giỏ hàng");
+		btn_xoaGioHang.setBackground(Color.RED);
+		btn_xoaGioHang.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_xoaGioHang.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				xoaKhoiGioHang();
 			}
 		});
-		btn_xoaGioHang.setBounds(20, 500, 112, 21);
+		btn_xoaGioHang.setBounds(20, 500, 112, 27);
 		panel_1.add(btn_xoaGioHang);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Tổng tiền giảm :");
 		lblNewLabel_2_1.setForeground(Color.BLACK);
-		lblNewLabel_2_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		lblNewLabel_2_1.setBounds(310, 533, 97, 13);
+		lblNewLabel_2_1.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblNewLabel_2_1.setBounds(310, 545, 97, 13);
 		panel_1.add(lblNewLabel_2_1);
 		
 		txt_tongTienKM = new JTextField();
 		txt_tongTienKM.setColumns(10);
-		txt_tongTienKM.setBounds(405, 530, 187, 19);
+		txt_tongTienKM.setBounds(405, 540, 187, 30);
 		panel_1.add(txt_tongTienKM);
 		
 		
 		JLabel lblNewLabel_6 = new JLabel("Giá từ :");
 		lblNewLabel_6.setForeground(Color.BLACK);
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_6.setBounds(10, 106, 108, 25);
+		lblNewLabel_6.setBounds(20, 106, 81, 25);
 		panel_BanHang.add(lblNewLabel_6);
 		
 		txt_giaMin = new JTextField();
-		txt_giaMin.setBounds(93, 113, 123, 19);
+		txt_giaMin.setBounds(93, 105, 107, 30);
 		panel_BanHang.add(txt_giaMin);
 		txt_giaMin.setColumns(10);
 		
@@ -540,7 +547,7 @@ public class QL_BanHang extends JFrame {
 		
 		txt_giaMax = new JTextField();
 		txt_giaMax.setColumns(10);
-		txt_giaMax.setBounds(319, 113, 123, 19);
+		txt_giaMax.setBounds(301, 108, 123, 30);
 		panel_BanHang.add(txt_giaMax);
 		
 		btn_tim = new JButton("Tìm");
@@ -622,13 +629,13 @@ public class QL_BanHang extends JFrame {
 		panel_5.add(lblNhnVinLp);
 		
 		txt_maHD2 = new JTextField();
-		txt_maHD2.setBounds(80, 29, 261, 26);
+		txt_maHD2.setBounds(80, 29, 261, 30);
 		panel_5.add(txt_maHD2);
 		txt_maHD2.setColumns(10);
 		
 		txt_maKH2 = new JTextField();
 		txt_maKH2.setColumns(10);
-		txt_maKH2.setBounds(80, 65, 261, 26);
+		txt_maKH2.setBounds(80, 65, 261, 30);
 		panel_5.add(txt_maKH2);
 		
 		txt_NhanVien2 = new JTextField();
@@ -803,7 +810,9 @@ public class QL_BanHang extends JFrame {
 		JButton btn_refresh = new JButton("Refesh");
 		btn_refresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				loadingHoaDon();
 				loadingCTHD();
+				
 			}
 		});
 		btn_refresh.setBounds(347, 196, 85, 21);
@@ -821,11 +830,16 @@ public class QL_BanHang extends JFrame {
 		btn_menu1.setBounds(551, 661, 216, 33);
 		btn_menu1.setIcon(new ImageIcon("Icon/home.png"));
 		panel_HoaDon.add(btn_menu1);
+		
 		loadingSanPham();
 		loadingComBox();
 		loadingHoaDon();
 		loadingCTHD();
 		getTenNhanVien();
+	}
+	public void loadDataHoaDon() {
+		loadingHoaDon();
+		loadingCTHD();
 	}
 	private void loadAnh(String anh) {
         lbl_hinhAnh.setIcon(getAnhSP(anh));
@@ -1174,6 +1188,36 @@ public class QL_BanHang extends JFrame {
 			table_HD.getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
 		}
 	}
+	
+	private void loadingCTHD() {
+		model_CTHD.setRowCount(0);
+		ArrayList<CTHoaDon> dscthd = CThoaDonBUS.getListCTHoaDon();
+		Vector header = new Vector();
+		header.add("Mã HĐ");
+		header.add("Mã SP");
+		header.add("Số lượng");
+		header.add("Đơn giá");
+		header.add("Thành tiền");
+
+		if (model_CTHD.getRowCount() == 0) {
+			model_CTHD = new DefaultTableModel(header, 0);
+		}
+		for (CTHoaDon hd : dscthd) {
+			Vector row = new Vector();
+			row.add(hd.getMaHD());
+			row.add(hd.getMaSP());
+			row.add(hd.getSoLuong());
+			row.add(hd.getDonGia());
+			row.add(hd.getThanhTien());			
+			model_CTHD.addRow(row);
+		}
+		table_CTHD.setModel(model_CTHD);
+		//CĂN GIỮA TABLE
+		centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+		for (int x = 0; x < table_CTHD.getColumnCount(); x++) {
+			table_CTHD.getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
+		}
+	}
 
 	private void clickTableHD() {
 		int row = table_HD.getSelectedRow();
@@ -1284,35 +1328,7 @@ public class QL_BanHang extends JFrame {
 			}
 		}
 	}
-	private void loadingCTHD() {
-		model_CTHD.setRowCount(0);
-		ArrayList<CTHoaDon> dscthd = CThoaDonBUS.getListCTHoaDon();
-		Vector header = new Vector();
-		header.add("Mã HĐ");
-		header.add("Mã SP");
-		header.add("Số lượng");
-		header.add("Đơn giá");
-		header.add("Thành tiền");
-
-		if (model_CTHD.getRowCount() == 0) {
-			model_CTHD = new DefaultTableModel(header, 0);
-		}
-		for (CTHoaDon hd : dscthd) {
-			Vector row = new Vector();
-			row.add(hd.getMaHD());
-			row.add(hd.getMaSP());
-			row.add(hd.getSoLuong());
-			row.add(hd.getDonGia());
-			row.add(hd.getThanhTien());			
-			model_CTHD.addRow(row);
-		}
-		table_CTHD.setModel(model_CTHD);
-		//CĂN GIỮA TABLE
-		centerRenderer.setHorizontalAlignment(JLabel.CENTER);
-		for (int x = 0; x < table_CTHD.getColumnCount(); x++) {
-			table_CTHD.getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
-		}
-	}
+	
 	private void clickTableCTHD() {
 		int row = table_CTHD.getSelectedRow();
 		if (row > -1) {

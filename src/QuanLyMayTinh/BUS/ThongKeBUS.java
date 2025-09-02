@@ -8,11 +8,11 @@ public class ThongKeBUS {
 	 public ThongKeDao thongKeDAO = new ThongKeDao();
 	 private ArrayList<Double> doanhThuThang;
 	 
-	 public int getDoanhThuNam(String nam) {
+	 public long getDoanhThuNam(String nam) {
 		 int year = Integer.parseInt(nam);
 		 return thongKeDAO.tongThuTheoNam(year);
 	 }
-	 public int getTongChiNam(String nam) {
+	 public long getTongChiNam(String nam) {
 		 int year = Integer.parseInt(nam);
 		 return thongKeDAO.tongChiTheoNam(year);
 	 }

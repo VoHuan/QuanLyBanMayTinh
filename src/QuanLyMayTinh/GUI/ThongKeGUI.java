@@ -23,12 +23,16 @@ import javax.swing.JSpinner;
 import javax.swing.table.DefaultTableModel;
 
 import QuanLyMayTinh.BUS.ThongKeBUS;
+import QuanLyMayTinh.DAO.HoaDonDAO;
 import QuanLyMayTinh.DAO.MyConnect;
+import MyCustom.MoneyFormatter;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
+
 import javax.swing.JToggleButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -44,9 +48,11 @@ public class ThongKeGUI extends JFrame {
 	private ButtonGroup G;
 	boolean check=false;
 	private JComboBox cbx_nam;
+	private List<Integer> dsNam;
 	ThongKeBUS TKBUS = new ThongKeBUS();
 	private JLabel lbl_tongThu;
 	private JLabel lbl_tongChi;
+	HoaDonDAO hoaDonDAO = new HoaDonDAO();
 	/**
 	 * Launch the application.
 	 */
@@ -100,14 +106,14 @@ public class ThongKeGUI extends JFrame {
 		lbl_tongThu.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_tongThu.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		lbl_tongThu.setBackground(Color.WHITE);
-		lbl_tongThu.setBounds(73, 142, 339, 114);
+		lbl_tongThu.setBounds(73, 142, 380, 114);
 		contentPane.add(lbl_tongThu);
 		
 		lbl_tongChi = new JLabel("");
 		lbl_tongChi.setForeground(Color.RED);
 		lbl_tongChi.setFont(new Font("Tahoma", Font.BOLD, 35));
 		lbl_tongChi.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		lbl_tongChi.setBounds(670, 142, 339, 114);
+		lbl_tongChi.setBounds(670, 142, 380, 114);
 		contentPane.add(lbl_tongChi);
 		
 
@@ -135,10 +141,11 @@ public class ThongKeGUI extends JFrame {
 			}
 		});
 		cbx_nam.setFont(new Font("Tahoma", Font.BOLD, 16));
-		cbx_nam.setModel(new DefaultComboBoxModel(new String[] {"2018", "2019", "2020", "2021", "2022"}));
-		cbx_nam.setSelectedIndex(4);
+		//cbx_nam.setModel(new DefaultComboBoxModel(new String[] {}));
+		//cbx_nam.setSelectedIndex(4);
 		cbx_nam.setBounds(490, 109, 104, 21);
 		contentPane.add(cbx_nam);
+		loadDanhSachNam();
 		
 		pn_hienthi.loadQuyThu("" + cbx_nam.getItemAt(cbx_nam.getSelectedIndex()));
 		pn_hienthi.loadQuyChi("" + cbx_nam.getItemAt(cbx_nam.getSelectedIndex()));
@@ -194,27 +201,40 @@ public class ThongKeGUI extends JFrame {
 		contentPane.add(btn_bieudo);
 		
 		
-		
 		hienThiTongDoanhThuNam();
 		hienThiTongChiNam();
 	
 	}
-	private int getTongDoanhThuNam() {
+	private void loadDanhSachNam() {
+		
+		dsNam = hoaDonDAO.getDanhSachNamCoHoaDon();
+
+		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+		for (Integer nam : dsNam) {
+		    model.addElement(String.valueOf(nam));
+		}
+		cbx_nam.setModel(model);
+		int itemCount = cbx_nam.getItemCount();
+		if (itemCount > 0) {
+		    cbx_nam.setSelectedIndex(itemCount -1);
+		}
+	}
+	private long getTongDoanhThuNam() {
 		 String nam = "" + cbx_nam.getItemAt(cbx_nam.getSelectedIndex());
-		 return TKBUS.getDoanhThuNam(nam);
+		 return (long)TKBUS.getDoanhThuNam(nam);
 	}
 	private void hienThiTongDoanhThuNam() {
-		lbl_tongThu.setText(getTongDoanhThuNam()+" VNĐ");
+		lbl_tongThu.setText(MoneyFormatter.formatMoney(getTongDoanhThuNam())+" VNĐ");
 	}
 	
 	
-	private int getTongChiTheoNam() {
+	private long getTongChiTheoNam() {
 		 String nam = "" + cbx_nam.getItemAt(cbx_nam.getSelectedIndex());
-		 return TKBUS.getTongChiNam(nam);
+		 return (long)TKBUS.getTongChiNam(nam);
 	}
 	
 	private void hienThiTongChiNam() {
-		lbl_tongChi.setText(getTongChiTheoNam()+" VNĐ");
+		lbl_tongChi.setText(MoneyFormatter.formatMoney(getTongChiTheoNam())+" VNĐ");
 	}
 
 	

@@ -3,9 +3,10 @@ package QuanLyMayTinh.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import MyCustom.MoneyFormatter;
 
 public class ThongKeDao {
-	public int tongThuTheoNam(int nam) {
+	public long tongThuTheoNam(int nam) {
 		try {
 			PreparedStatement prep = MyConnect.conn
 					.prepareStatement("Select Sum(tongtien) as 'Doanh thu' "
@@ -13,14 +14,14 @@ public class ThongKeDao {
 			prep.setInt(1, nam);
 			ResultSet rs = prep.executeQuery();
 			while (rs.next()) {
-				return rs.getInt(1);
+				return rs.getLong(1);
 			}
 		} catch (SQLException ex) {
 			return -1;
 		}
 		return 0;
 	}
-	public int tongChiTheoNam(int nam) {
+	public long tongChiTheoNam(int nam) {
 		try {
 			PreparedStatement prep = MyConnect.conn
 					.prepareStatement("Select  Sum(tongtien) as 'Doanh thu' "
@@ -28,7 +29,7 @@ public class ThongKeDao {
 			prep.setInt(1, nam);
 			ResultSet rs = prep.executeQuery();
 			while (rs.next()) {
-				return rs.getInt(1);
+				return rs.getLong(1);
 			}
 		} catch (SQLException ex) {
 			System.out.println(ex);
@@ -118,10 +119,10 @@ public class ThongKeDao {
 							+ "From hoadon WHERE Year(ngaylap) = ? and Month(ngaylap) =? Group by Year(ngaylap)");
 			for(int i=0;i<12;i++) {
 				prep.setInt(1, nam);
-				prep.setInt(2, i);
+				prep.setInt(2, i+1);
 				ResultSet rs = prep.executeQuery();
 				while (rs.next()) {
-					month[i] = rs.getInt(1)+"";
+					month[i] = MoneyFormatter.formatMoney(rs.getLong(1));
 				}				
 			}
 			return month;
@@ -139,10 +140,10 @@ public class ThongKeDao {
 							+ "From phieunhap WHERE Year(ngaynhap) = ? and Month(ngaynhap) =? Group by Year(ngaynhap)");
 			for(int i=0;i<12;i++) {
 				prep.setInt(1, nam);
-				prep.setInt(2, i);
+				prep.setInt(2, i+1);
 				ResultSet rs = prep.executeQuery();
 				while (rs.next()) {
-					month[i] = rs.getInt(1)+"";
+					month[i] =  MoneyFormatter.formatMoney(rs.getLong(1));
 				}				
 			}
 			return month;
